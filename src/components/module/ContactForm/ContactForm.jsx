@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
- class ContactForm extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.setState({ name: '', number: '' });
@@ -46,5 +47,9 @@ import React, { Component } from 'react';
     );
   }
 }
+
+ContactForm.propTypes = {
+  createContactsArray: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
