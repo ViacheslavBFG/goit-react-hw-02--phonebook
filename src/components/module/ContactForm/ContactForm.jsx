@@ -49,7 +49,7 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  createContactsArray: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
